@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlowNest | Natural Skincare</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            warmYellow: "#f5d799",
+            warmBeige: "#f9f3e8",
+            warmBrown: "#8c735c",
+            softCream: "#fffaf0"
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow-sm {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .product-card {
+        @apply transition-all duration-500 ease-out;
+      }
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(140, 115, 92, 0.15);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(25px);
+        transition: all 0.7s ease;
+      }
+      .fade-in.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    body {
+      background-color: #f9f3e8;
+    }
+  </style>
+</head>
+<body class="font-sans text-warmBrown">
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-softCream/90 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-semibold text-warmBrown">GlowNest</a>
+      <div class="hidden md:flex gap-8">
+        <a href="#home" class="hover:text-warmYellow transition-colors">Home</a>
+        <a href="#products" class="hover:text-warmYellow transition-colors">Products</a>
+        <a href="#about" class="hover:text-warmYellow transition-colors">About Us</a>
+        <a href="#contact" class="hover:text-warmYellow transition-colors">Contact</a>
+      </div>
+      <div class="flex gap-4">
+        <i class="fa fa-search text-lg cursor-pointer hover:text-warmYellow transition-colors"></i>
+        <i class="fa fa-shopping-bag text-lg cursor-pointer hover:text-warmYellow transition-colors"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-warmYellow/30 z-0"></div>
+    <img
+      src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+      alt="Skincare Banner"
+      class="absolute w-full h-full object-cover" />
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-[clamp(2.5rem,7vw,4.5rem)] font-bold text-white text-shadow-sm mb-6">
+        Pure Glow From Nature
+      </h1>
+      <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/95 max-w-xl mx-auto mb-8">
+        Gentle, nourishing skincare crafted with natural ingredients for healthy, radiant skin.
+      </p>
+      <a href="#products" class="inline-block bg-warmYellow text-warmBrown px-8 py-3 rounded-full font-medium hover:bg-[#f2cc80] transition-all shadow-lg">
+        Shop Collection
+      </a>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section id="products" class="py-24 container mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-4xl font-semibold mb-4">Our Skincare Collection</h2>
+      <p class="max-w-2xl mx-auto text-warmBrown/80">
+        Handpicked formulas to hydrate, repair and protect your skin. Clean ingredients, no harsh chemicals.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Product 1 Hydrating Bloom Serum -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Hydrating Serum"
+          class="w-full h-72 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Hydrating Bloom Serum</h3>
+          <p class="text-sm text-warmBrown/70 mb-4">
+            Lightweight serum for dry & dull skin, packed with hyaluronic acid.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">$38.00</span>
+            <button class="bg-warmYellow/80 px-4 py-2 rounded-full text-sm hover:bg-warmYellow transition-all">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 Calming Night Cream -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1617897903246-719242758050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Calming Night Cream"
+          class="w-full h-72 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Calming Night Cream</h3>
+          <p class="text-sm text-warmBrown/70 mb-4">
+            Rich night moisturizer, soothe sensitive skin while you sleep.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">$45.00</span>
+            <button class="bg-warmYellow/80 px-4 py-2 rounded-full text-sm hover:bg-warmYellow transition-all">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product3 Gentle Foam Cleanser -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Gentle Foam Cleanser"
+          class="w-full h-72 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Gentle Foam Cleanser</h3>
+          <p class="text-sm text-warmBrown/70 mb-4">
+            Mild foaming cleanser, removes makeup without stripping moisture.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">$26.00</span>
+            <button class="bg-warmYellow/80 px-4 py-2 rounded-full text-sm hover:bg-warmYellow transition-all">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product4 Rose Glow Toner -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Rose Toner"
+          class="w-full h-72 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Rose Glow Toner</h3>
+          <p class="text-sm text-warmBrown/70 mb-4">
+            Alcohol-free toner with rose water to balance and refresh skin.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">$32.00</span>
+            <button class="bg-warmYellow/80 px-4 py-2 rounded-full text-sm hover:bg-warmYellow transition-all">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product5 Vitamin C Radiance Cream -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Vitamin C Cream"
+          class="w-full h-72 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Vitamin C Radiance Cream</h3>
+          <p class="text-sm text-warmBrown/70 mb-4">
+            Brightening cream designed to even tone and boost daily radiance.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-bold">$42.00</span>
+            <button class="bg-warmYellow/80 px-4 py-2 rounded-full text-sm hover:bg-warmYellow transition-all">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-warmYellow/20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2 fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="natural skincare"
+          class="rounded-2xl shadow-lg w-full" />
+      </div>
+      <div class="md:w-1/2 fade-in">
+        <h2 class="text-4xl font-semibold mb-5">Our Philosophy</h2>
+        <p class="text-warmBrown/80 mb-4">
+          At GlowNest, we believe skincare should be simple and kind. Every product is formulated with plant-derived ingredients, cruelty-free and paraben-free.
+        </p>
+        <p class="text-warmBrown/80">
+          We strive to bring you safe, effective products that respect both your skin and our planet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 container mx-auto px-6 text-center fade-in">
+    <h2 class="text-4xl font-semibold mb-5">Stay Connected</h2>
+    <p class="text-warmBrown/80 mb-8 max-w-xl mx-auto">
+      Subscribe for new product launches, skincare tips & exclusive offers.
+    </p>
+    <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+      <input
+        type="email"
+        placeholder="Your email address"
+        class="flex-1 px-4 py-3 rounded-full border border-warmYellow/40 outline-none focus:ring-2 ring-warmYellow/50" />
+      <button type="submit" class="bg-warmBrown text-white px-6 py-3 rounded-full hover:bg-[#75604d] transition-colors">
+        Subscribe
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-warmBrown text-white py-12">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <h3 class="text-xl font-medium mb-4">GlowNest</h3>
+        <p class="opacity-80">Natural skincare for glowing skin. Cruelty-free & clean beauty.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-medium mb-4">Quick Links</h3>
+        <ul class="space-y-2 opacity-80">
+          <li><a href="#" class="hover:text-warmYellow">Shipping Policy</a></li>
+          <li><a href="#" class="hover:text-warmYellow">Returns</a></li>
+          <li><a href="#" class="hover:text-warmYellow">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-medium mb-4">Follow Us</h3>
+        <div class="flex gap-5 text-2xl">
+          <a href="#"><i class="fa fa-instagram hover:text-warmYellow transition-colors"></i></a>
+          <a href="#"><i class="fa fa-facebook hover:text-warmYellow transition-colors"></i></a>
+          <a href="#"><i class="fa fa-pinterest hover:text-warmYellow transition-colors"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6 mt-10 pt-6 border-t border-white/20 text-center text-sm opacity-70">
+      © 2026 GlowNest. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scroll Animation JS -->
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          window.scrollTo({
+            top: targetEl.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+<!-- （注：内容由AI生成） -->
